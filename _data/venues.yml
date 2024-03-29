@@ -4,3 +4,15 @@
 
 "PhysRev":
   url: https://journals.aps.org/
+
+"arXiv":
+  url: https://arxiv.org/
+  color: "#b31b1b"
+
+"JCP":
+  url: https://pubs.aip.org/aip/jcp
+  color: "#213066"
+
+"JPCA":
+  url: https://pubs.acs.org/journal/jpcafh
+  color: "#ffc72c"

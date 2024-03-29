@@ -1,25 +1,22 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: Computational Materials PhD @ Harvard
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile_pic.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
-news: true # includes a list of news items
+news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I'm a first year PhD student in the [Materials Intelligence Research](https://mir.g.harvard.edu/) (MIR) group of Harvard Unviersity, where I am fortunate to be advised by [Boris Kozinsky](https://mir.g.harvard.edu/people/boris-kozinsky). My research interests lie at the intersection of atomistic materials modelling, electronic structure and artificial intelligence.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Prior to joining the MIR group, I was a senior research assistant in the [Sustainable Nanodevice Design Lab](https://www.nanodevice.group/home) of [Yee Sin Ang](https://smt.sutd.edu.sg/people/faculty/ang-yee-sin/) at the Singapore University of Technology and Design, where I developed a sustainability-guided *in silico* materials screening framework and applied it to the search of ultrawide bandgap 2D material candidates for next-generation nanodevices.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I completed my BA in Physics and MPhil in Materials Science at the University of Cambridge. During my time at the [Materials Theory Group](https://www.mtg.msm.cam.ac.uk/) of Cambridge, I developed a differentiable software for orbital-free density functional simulations called [PROFESS-AD](https://profess-ad.readthedocs.io/en/latest/index.html) under the supervision of [Chuck Witt](https://www.mtg.msm.cam.ac.uk/People/dr-w-chuck-witt) and [Chris Pickard](https://www.msm.cam.ac.uk/people/pickard).
