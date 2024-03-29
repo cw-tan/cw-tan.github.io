@@ -1,81 +1,33 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: assets/img/12.jpg
+title: Differentiable OFDFT
+description: Automatic differentiation meets orbital-free density functional theory
+img: 
 importance: 1
-category: work
+category: OFDFT
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+[Automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) (AD) is an indispensable utility of modern machine
+learning libraries. In the realm of scientific computing, AD has been leveraged to accelerate prototyping and unlock new opporunities
+previously obscured by the need for tedious and, at times, intractably complicated pen-and-paper derivatives.
+The [PROFESS-AD](https://github.com/profess-dev/profess-ad) software {% cite tan2023automatic %} is one such example, where I applied AD
+to the field of [orbital-free density functional theory](https://pubs.acs.org/doi/10.1021/acs.chemrev.2c00758) (OFDFT).
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+OFDFT is an approximate way to get to the quantum mechanical results of the more computationally-demanding Kohn-Sham DFT (KSDFT), that does
+involve orbitals, at a much cheaper cost. (OFDFT scales linearly with the number of atoms with a small prefactor, while conventional KSDFT
+scales cubically) Central to OFDFT is the energy density functional, that is, a single scalar quantity that depends on the electron density,
+a scalar field in 3D space (often defined on a grid). The ground state solution for the atomistic system in question is a variational one where
+the ground state electron density is the one that minimizes the energy functional - reminiscent of the loss function to be minimized for typical
+machine learning problems. PROFESS-AD leverages this link, taking advantage of the AD capabilities and gradient-based optimization utilities of
+PyTorch to build its engine for orbital-free density functional optimizations. A toy model is shown below to illustrate the density optimization
+process.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include video.liquid path="assets/video/ofdft_qho_opt.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    Orbital-free electron density optimization for a one-particle quantum harmonic oscillator.
 </div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
