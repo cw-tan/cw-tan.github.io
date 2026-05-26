@@ -8,10 +8,6 @@ This site is built on [al-folio](https://alshedivat.github.io/al-folio/). See th
 
 For installation details please refer to [INSTALL.md](INSTALL.md).
 
-## Customizing
-
-For customization details please refer to [CUSTOMIZE.md](CUSTOMIZE.md).
-
 ## Features
 
 ### Light/Dark Mode
