@@ -1,0 +1,15 @@
+github_repos:
+  - name: mir-group/nequip
+    logo: /assets/img/nequip_logo.png
+    show_name: false
+  - name: mir-group/allegro
+    logo: /assets/img/allegro_logo.png
+    show_name: false
+  - name: mir-group/allegro-pol
+    logo: /assets/img/allegro_pol_logo.png
+    show_name: false
+  - name: mir-group/nequip-nac
+    logo: /assets/img/nequip_nac_logo.png
+    show_name: false
+  - name: profess-dev/profess-ad
+    show_name: true

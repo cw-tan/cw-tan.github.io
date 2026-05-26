@@ -1,0 +1,57 @@
+---
+---
+{% assign author_array_size = entry.author_array | size %}
+<span class="research-reference">
+  {% for author in entry.author_array %}
+    {% assign author_is_self = false %}
+    {% assign author_last_name = author.last | remove: '¶' | remove: '&' | remove: '*' | remove: '†' | remove: '^' %}
+    {% if site.scholar.last_name contains author_last_name %}
+      {% if site.scholar.first_name contains author.first %}
+        {% assign author_is_self = true %}
+      {% endif %}
+    {% endif %}
+
+    {% assign initials = '' %}
+    {% assign first_name_parts = author.first | replace: '-', ' ' | split: ' ' %}
+    {% for part in first_name_parts %}
+      {% assign cleaned_part = part | strip %}
+      {% if cleaned_part != '' %}
+        {% assign initial = cleaned_part | slice: 0, 1 %}
+        {% assign initials = initials | append: initial | append: '.' %}
+      {% endif %}
+    {% endfor %}
+
+    {% if author_is_self %}
+      <u>{{ initials }} {{ author_last_name }}</u>
+    {% else %}
+      {{ initials }} {{ author_last_name }}
+    {% endif %}
+    {% unless forloop.last %}, {% endunless %}
+  {% endfor %}.
+
+  <strong>{{ entry.title }}.</strong>
+
+  {% capture entry_link %}
+    {% if entry.doi %}
+      https://doi.org/{{ entry.doi }}
+    {% elsif entry.html %}
+      {% if entry.html contains '://' %}
+        {{ entry.html }}
+      {% else %}
+        {{ entry.html | prepend: '/assets/html/' | relative_url }}
+      {% endif %}
+    {% endif %}
+  {% endcapture %}
+  {% assign entry_link = entry_link | strip %}
+
+  {% capture venue_line %}
+    {% if entry.journal %}<em>{{ entry.journal }}</em>{% endif %}{% if entry.volume %} {{ entry.volume }}{% endif %}{% if entry.pages %}, {{ entry.pages }}{% endif %}{% if entry.year %} ({{ entry.year }}){% endif %}.
+  {% endcapture %}
+  {% assign venue_line = venue_line | strip %}
+
+  {% if entry_link != '' %}
+    <a href="{{ entry_link }}">{{ venue_line }}</a>
+  {% else %}
+    {{ venue_line }}
+  {% endif %}
+</span>

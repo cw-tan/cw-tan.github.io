@@ -1,0 +1,31 @@
+{% for entry in site.data.software.github_repos %}
+  {% if entry.name == include.repository %}
+    {% assign repo_entry = entry %}
+  {% endif %}
+{% endfor %}
+
+{% assign repo_parts = include.repository | split: '/' %}
+
+<article class="software-card" data-repo="{{ include.repository }}">
+  {% if repo_entry.logo %}
+    <a class="software-logo-wrap" href="https://github.com/{{ include.repository }}" aria-label="{{ repo_parts[1] }} repository">
+      <img class="software-logo" src="{{ repo_entry.logo | relative_url }}" alt="{{ repo_parts[1] }} logo">
+    </a>
+  {% endif %}
+  {% if repo_entry.show_name != false %}
+    <h3 class="software-title">
+      <a href="https://github.com/{{ include.repository }}">{{ repo_parts[1] }}</a>
+    </h3>
+  {% endif %}
+  <p class="software-desc" data-field="description">{{ repo_entry.description }}</p>
+  <div class="software-meta">
+    <a class="software-stat" href="https://github.com/{{ include.repository }}/stargazers" aria-label="{{ include.repository }} stars">
+      <i class="fa-solid fa-star"></i>
+      <strong data-field="stars">{% if repo_entry.stars %}{{ repo_entry.stars }}{% else %}--{% endif %}</strong>
+    </a>
+    <a class="software-stat" href="https://github.com/{{ include.repository }}/commits/?author={{ site.github_username }}" aria-label="{{ include.repository }} commits by {{ site.github_username }}">
+      <i class="fa-solid fa-code-commit"></i>
+      <strong data-field="my-commits">{% if repo_entry.commits %}{{ repo_entry.commits }}{% else %}--{% endif %}</strong> commits
+    </a>
+  </div>
+</article>

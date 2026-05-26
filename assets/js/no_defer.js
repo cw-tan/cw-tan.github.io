@@ -1,3 +1,26 @@
+// highlight active section in research subnav
+document.addEventListener("DOMContentLoaded", function () {
+  const subnav = document.querySelector(".research-subnav");
+  if (!subnav) return;
+  const links = subnav.querySelectorAll("a");
+  const headings = Array.from(links).map((a) => document.querySelector(a.getAttribute("href")));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          links.forEach((a) => a.classList.remove("active"));
+          const active = subnav.querySelector(`a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add("active");
+        }
+      });
+    },
+    { rootMargin: "-56px 0px -70% 0px", threshold: 0 }
+  );
+
+  headings.forEach((h) => { if (h) observer.observe(h); });
+});
+
 // add bootstrap classes to tables
 $(document).ready(function () {
   $("table").each(function () {
