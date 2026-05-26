@@ -1,15 +1,34 @@
 github_repos:
-  - name: mir-group/nequip
-    logo: /assets/img/nequip_logo.png
-    show_name: false
-  - name: mir-group/allegro
-    logo: /assets/img/allegro_logo.png
-    show_name: false
-  - name: mir-group/allegro-pol
-    logo: /assets/img/allegro_pol_logo.png
-    show_name: false
-  - name: mir-group/nequip-nac
-    logo: /assets/img/nequip_nac_logo.png
-    show_name: false
-  - name: profess-dev/profess-ad
-    show_name: true
+- name: mir-group/nequip
+  logo: /assets/img/nequip_logo.png
+  show_name: false
+  stars: 914
+  description: NequIP is a code for building E(3)-equivariant interatomic potentials
+  commits: 1227
+- name: mir-group/allegro
+  logo: /assets/img/allegro_logo.png
+  show_name: false
+  stars: 482
+  description: Allegro is a code for building highly scalable E(3)-equivariant interatomic
+    potentials
+  commits: 221
+- name: mir-group/allegro-pol
+  logo: /assets/img/allegro_pol_logo.png
+  show_name: false
+  stars: 38
+  description: Allegro-pol extends the Allegro architecture to model the electric
+    response of materials
+  commits: 45
+- name: mir-group/nequip-nac
+  logo: /assets/img/nequip_nac_logo.png
+  show_name: false
+  stars: 3
+  description: NequIP-NAC extends the NequIP architecture to perform nonadiabatic
+    molecular dynamics.
+  commits: 31
+- name: profess-dev/profess-ad
+  show_name: true
+  stars: 12
+  description: PyTorch-based auto-differentiable orbital-free density functional theory
+    package
+  commits: 22
