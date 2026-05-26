@@ -1,11 +1,11 @@
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const numberFmt = new Intl.NumberFormat("en-US");
-    const compactFmt = new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 });
+  document.addEventListener('DOMContentLoaded', () => {
+    const numberFmt = new Intl.NumberFormat('en-US');
+    const compactFmt = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
 
-    const cards = document.querySelectorAll(".software-card[data-repo]");
+    const cards = document.querySelectorAll('.software-card[data-repo]');
     cards.forEach(async (card) => {
-      const repo = card.getAttribute("data-repo");
+      const repo = card.getAttribute('data-repo');
       if (!repo) return;
       try {
         const response = await fetch(`https://api.github.com/repos/${repo}`);
@@ -16,19 +16,19 @@
         const myCommits = card.querySelector('[data-field="my-commits"]');
         const description = card.querySelector('[data-field="description"]');
 
-        if (stars && typeof data.stargazers_count === "number") {
+        if (stars && typeof data.stargazers_count === 'number') {
           stars.textContent = compactFmt.format(data.stargazers_count);
           stars.title = `${numberFmt.format(data.stargazers_count)} stars`;
         }
         if (description && data.description) description.textContent = data.description;
 
         if (myCommits) {
-          const user = "{{ site.github_username }}";
+          const user = '{{ site.github_username }}';
           const contributorsResp = await fetch(`https://api.github.com/repos/${repo}/contributors?per_page=100`);
           if (contributorsResp.ok) {
             const contributors = await contributorsResp.json();
             const me = contributors.find((c) => c && c.login === user);
-            if (me && typeof me.contributions === "number") {
+            if (me && typeof me.contributions === 'number') {
               myCommits.textContent = compactFmt.format(me.contributions);
               myCommits.title = `${numberFmt.format(me.contributions)} commits by ${user}`;
             }

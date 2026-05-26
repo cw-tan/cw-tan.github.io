@@ -12,14 +12,17 @@ layout: default
           {% endif %}
           <h1 class="about-name">
             {% if site.title == 'blank' %}
-              <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+              <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+              {{ site.last_name }}
             {% else %}
               {{ site.title }}
             {% endif %}
           </h1>
           <p class="about-subtitle">{{ page.subtitle }}</p>
           {% if site.email %}
-            <p class="about-email"><a href="mailto:{{ site.email | encode_email }}">{{ site.email }}</a></p>
+            <p class="about-email">
+              <a href="mailto:{{ site.email | encode_email }}">{{ site.email }}</a>
+            </p>
           {% endif %}
           {% if page.social %}
             <div class="social">

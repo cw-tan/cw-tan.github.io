@@ -2,7 +2,7 @@
 layout: page
 title: Differentiable OFDFT
 description: Automatic differentiation meets orbital-free density functional theory
-img: 
+img:
 importance: 1
 category: OFDFT
 related_publications: true

@@ -21,11 +21,20 @@
   <div class="software-meta">
     <a class="software-stat" href="https://github.com/{{ include.repository }}/stargazers" aria-label="{{ include.repository }} stars">
       <i class="fa-solid fa-star"></i>
-      <strong data-field="stars">{% if repo_entry.stars %}{{ repo_entry.stars }}{% else %}--{% endif %}</strong>
+      <strong data-field="stars">
+        {%- if repo_entry.stars %}{{ repo_entry.stars }}{% else %}--{% endif -%}
+      </strong>
     </a>
-    <a class="software-stat" href="https://github.com/{{ include.repository }}/commits/?author={{ site.github_username }}" aria-label="{{ include.repository }} commits by {{ site.github_username }}">
+    <a
+      class="software-stat"
+      href="https://github.com/{{ include.repository }}/commits/?author={{ site.github_username }}"
+      aria-label="{{ include.repository }} commits by {{ site.github_username }}"
+    >
       <i class="fa-solid fa-code-commit"></i>
-      <strong data-field="my-commits">{% if repo_entry.commits %}{{ repo_entry.commits }}{% else %}--{% endif %}</strong> commits
+      <strong data-field="my-commits">
+        {%- if repo_entry.commits %}{{ repo_entry.commits }}{% else %}--{% endif -%}
+      </strong>
+      commits
     </a>
   </div>
 </article>

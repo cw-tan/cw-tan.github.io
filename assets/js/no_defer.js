@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
     { rootMargin: "-56px 0px -70% 0px", threshold: 0 }
   );
 
-  headings.forEach((h) => { if (h) observer.observe(h); });
+  headings.forEach((h) => {
+    if (h) observer.observe(h);
+  });
 });
 
 // add bootstrap classes to tables
