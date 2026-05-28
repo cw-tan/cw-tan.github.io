@@ -96,7 +96,7 @@ subnav:
         </div>
     </div>
     <div class="col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center">
-        <img src="{{ '/assets/img/ofdft_qho_2d.gif' | relative_url }}" class="img-fluid rounded z-depth-1" alt="OFDFT density optimization animation">
+        {% include figure.liquid path="assets/img/ofdft_qho_2d.gif" class="img-fluid rounded z-depth-1" alt="OFDFT density optimization animation" %}
     </div>
 </div>
 
