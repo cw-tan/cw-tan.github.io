@@ -588,6 +588,10 @@ footer.sticky-bottom {
   padding: 1rem;
   background-color: var(--global-card-bg-color);
   text-align: center;
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .software-logo-wrap {
@@ -649,6 +653,11 @@ footer.sticky-bottom {
 
 .software-stat .fa-star {
   color: #eab308;
+  transition: filter 0.2s ease;
+}
+
+.software-stat:hover .fa-star {
+  filter: drop-shadow(0 0 4px #eab308);
 }
 
 .software-stat strong {

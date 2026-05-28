@@ -68,7 +68,7 @@ subnav:
 
 <div class="row">
     <div class="col-md-4 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/uwbg_cover.png" class="img-fluid rounded z-depth-1" alt="Computational materials screening cover" %}
+        {% include figure.liquid loading="eager" path="assets/img/uwbg_cover.png" class="img-fluid rounded z-depth-1" alt="Computational materials screening cover" zoomable=true %}
     </div>
     <div class="col-md-8 mt-3 mt-md-0">
         <p>
@@ -95,8 +95,8 @@ subnav:
             {% bibliography --query @*[key=witt2021random]* --group_by none --template bib_research_ref %}
         </div>
     </div>
-    <div class="col-md-6 mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/ofdft_qho_opt.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true loop=true muted=true %}
+    <div class="col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center">
+        {% include figure.liquid path="assets/img/ofdft_qho_2d.gif" class="img-fluid rounded z-depth-1" alt="OFDFT density optimization animation" %}
     </div>
 </div>
 
