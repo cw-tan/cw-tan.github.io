@@ -68,7 +68,7 @@ subnav:
 
 <div class="row">
     <div class="col-md-4 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/uwbg_cover.png" class="img-fluid rounded z-depth-1" alt="Computational materials screening cover" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/uwbg_cover.png" class="img-fluid rounded z-depth-1 research-cover" alt="Computational materials screening cover" zoomable=true %}
     </div>
     <div class="col-md-8 mt-3 mt-md-0">
         <p>

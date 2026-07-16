@@ -1071,6 +1071,14 @@ html.transition *:after {
     color: inherit;
   }
 
+  // subtle grow-on-hover for the cover image, matching the software cards
+  .research-copy .research-cover {
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+
   .post-meta {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
