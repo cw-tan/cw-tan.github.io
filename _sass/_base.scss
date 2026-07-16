@@ -1308,7 +1308,7 @@ nav[data-toggle="toc"] {
 
 .medium-zoom-overlay,
 .medium-zoom-image--opened {
-  z-index: 999;
+  z-index: 1040; // above the fixed-top navbar (z-index 1030) so zoomed images aren't clipped
 }
 
 #toc-sidebar {
