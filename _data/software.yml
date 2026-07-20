@@ -15,7 +15,7 @@ github_repos:
 - name: mir-group/allegro-pol
   logo: /assets/img/allegro_pol_logo.png
   show_name: false
-  stars: 38
+  stars: 39
   description: Allegro-pol extends the Allegro architecture to model the electric
     response of materials
   commits: 45
