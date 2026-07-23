@@ -542,6 +542,12 @@ footer.sticky-bottom {
   }
 }
 
+// offset section anchors so they land below the fixed navbar when jumped to
+#about,
+.section-anchor {
+  scroll-margin-top: 66px;
+}
+
 // Research subnav
 
 .research-subnav {

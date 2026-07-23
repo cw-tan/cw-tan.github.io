@@ -48,12 +48,17 @@
 
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
+            <a class="nav-link js-section-link" data-section="about" href="{{ '/' | relative_url }}#about">
               {{- about_title }}
               {% if page.permalink == '/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
+          </li>
+
+          <!-- Research (section on the home page; active state managed by scrollspy) -->
+          <li class="nav-item">
+            <a class="nav-link js-section-link" data-section="research" href="{{ '/' | relative_url }}#research">Research</a>
           </li>
 
           <!-- Other pages -->

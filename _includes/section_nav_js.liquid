@@ -1,0 +1,31 @@
+<!-- highlight the navbar link for the section currently in view (single-page scrollspy) -->
+<script>
+  (function () {
+    const items = Array.from(document.querySelectorAll('.js-section-link'))
+      .map((link) => ({ li: link.closest('.nav-item'), section: document.getElementById(link.dataset.section) }))
+      .filter((item) => item.li && item.section);
+    if (!items.length) return;
+
+    const offset = 80; // clears the fixed navbar before a section counts as "current"
+    let ticking = false;
+
+    function update() {
+      ticking = false;
+      let current = items[0];
+      for (const item of items) {
+        if (item.section.getBoundingClientRect().top - offset <= 0) current = item;
+      }
+      items.forEach((item) => item.li.classList.toggle('active', item === current));
+    }
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  })();
+</script>
