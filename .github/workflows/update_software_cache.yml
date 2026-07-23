@@ -22,6 +22,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # format the generated file with the same prettier as the check workflow,
+      # so the repo-wide `prettier . --check` stays green after the bot commits
+      - name: Setup Node.js ⚙️
+        uses: actions/setup-node@v4
+
+      - name: Format with Prettier 🎨
+        run: |
+          npm install --save-dev --save-exact prettier @shopify/prettier-plugin-liquid
+          npx prettier --write _data/software.yml
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
