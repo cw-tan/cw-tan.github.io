@@ -71,7 +71,7 @@ I completed my BA in Physics and MPhil in Materials Science at the University of
     <div class="col-md-12 mt-3 mt-md-0">
         <p>
             Machine learning interatomic potentials (MLIPs) based on deep equivariant neural networks achieve quantum-accurate results, but realizing their full potential requires careful attention to software design and computational efficiency.
-            I led the redesign of the <a href="https://github.com/mir-group/nequip">NequIP</a> software framework for <strong>deep equivariant graph neural network potentials</strong>, focusing on robustness, extensibility, and performance. The rewrite achieved <em>5× speedups</em> for training and <em>5–18× speedups</em> for molecular dynamics simulations.
+            I led the redesign of the <a href="https://github.com/mir-group/nequip">NequIP</a> software framework for <strong>deep equivariant graph neural network potentials</strong>, focusing on robustness, extensibility, and performance. The rewrite achieved <em>5× speedups</em> for training and <em>5–18× speedups</em> for molecular dynamics simulations. These optimizations enabled the construction of our first set of <strong>foundation potentials</strong>, among the fastest for materials, available at <a href="https://www.nequip.net/">nequip.net</a>.
         </p>
     </div>
 </div>
@@ -85,6 +85,7 @@ I completed my BA in Physics and MPhil in Materials Science at the University of
     <div class="col-md-12">
         <div class="research-refs">
             {% bibliography --query @*[key=tan2026high]* --group_by none --template bib_research_ref %}
+            {% bibliography --query @*[key=kavanagh2026fast]* --group_by none --template bib_research_ref %}
         </div>
     </div>
 </div>
