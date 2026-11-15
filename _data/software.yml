@@ -2,9 +2,9 @@ github_repos:
   - name: mir-group/nequip
     logo: /assets/img/nequip_logo.png
     show_name: false
-    stars: 974
+    stars: 975
     description: NequIP is a code for building E(3)-equivariant interatomic potentials
-    commits: 1257
+    commits: 1282
   - name: mir-group/allegro
     logo: /assets/img/allegro_logo.png
     show_name: false
